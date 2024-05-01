@@ -86,6 +86,9 @@ class CustomerController extends Controller
 
     public function login(Request $request){
 
-        return response()->json(['status'=>'sucess','details'=>$request->all()]);
+        if(null === request('email'))
+            return response()->json(['status'=>'error','message'=>'got error'],404);
+        else
+            return response()->json(['status'=>'sucess','details'=>$request->all()]);
     }
 }

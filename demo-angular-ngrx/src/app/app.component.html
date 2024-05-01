@@ -1,5 +1,6 @@
 <div>
   <app-header></app-header>
 </div>
-
+<app-loader *ngIf="showLoading$ | async"></app-loader>
+<div class="alert alert-danger">Error</div>
 <router-outlet></router-outlet> 

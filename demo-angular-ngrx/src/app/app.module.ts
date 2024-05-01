@@ -8,17 +8,20 @@ import {HTTP_INTERCEPTORS, HttpClientModule ,} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule }     from './app-routing.module';
 import { HeaderComponent } from './shared/header/header.component';
+import { LoaderComponent } from './loader/loader.component';
+import { appReducer } from './app.state';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
+        LoaderComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        StoreModule.forRoot({}),
+        StoreModule.forRoot(appReducer),
         EffectsModule.forRoot([]),
         HttpClientModule,
         /*StoreDevtoolsModule.instrument({
